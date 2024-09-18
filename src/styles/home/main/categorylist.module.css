@@ -1,0 +1,13 @@
+.category_list_container {
+  width: 15%;
+  background: #fff;
+}
+
+.category_list {
+  position: sticky;
+  top: 0;
+  padding: 0 30px 0 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
