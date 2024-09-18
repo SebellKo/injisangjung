@@ -1,0 +1,8 @@
+.animation_section {
+  width: 55%;
+  height: calc(100% - 30px);
+  padding-bottom: 30px;
+  display: flex;
+  align-items: flex-end;
+  gap: 5%;
+}
