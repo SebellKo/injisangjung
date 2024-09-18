@@ -1,0 +1,9 @@
+.post_list_container {
+  width: 85%;
+  background: #fff3d9;
+}
+
+.post_list {
+  display: flex;
+  flex-direction: column;
+}
