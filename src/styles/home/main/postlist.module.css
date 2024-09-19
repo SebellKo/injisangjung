@@ -1,6 +1,7 @@
 .post_list_container {
   width: 85%;
-  background: #fff3d9;
+  /* background: #fff3d9; */
+  background: #fff;
 }
 
 .post_list {

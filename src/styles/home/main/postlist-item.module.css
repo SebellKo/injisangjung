@@ -1,16 +1,18 @@
 .post_item {
-  padding: 100px 30px;
+  padding: 100px 30px 50px 30px;
   display: flex;
-  gap: 3.4vw;
+  align-items: flex-end;
+  gap: 11vw;
 }
 
 .item_summary_wrapper {
   display: flex;
-  gap: 8.4vw;
+  flex-direction: column;
+  gap: 3vh;
 }
 
 .item_order_num {
-  font-size: 1.375rem;
+  font-size: 0.8rem;
   font-weight: 700;
 }
 
@@ -26,33 +28,19 @@
 }
 
 .item_desc {
-  width: 30vw;
+  width: 28vw;
   text-wrap: pretty;
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .item_image_wrapper {
-  position: relative;
-  height: 8vw;
+  height: 9vw;
   display: flex;
+  gap: 1vw;
 }
 
 .item_image {
-  position: absolute;
   height: 100%;
   aspect-ratio: auto;
-}
-
-.item_image:nth-child(1) {
-  left: 0;
-}
-.item_image:nth-child(2) {
-  left: 5vw;
-}
-.item_image:nth-child(3) {
-  left: 10vw;
-}
-.item_image:nth-child(4) {
-  left: 15vw;
 }

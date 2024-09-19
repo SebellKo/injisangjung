@@ -8,12 +8,12 @@
 
 .nav {
   height: 50px;
-  padding-left: 30px;
   display: flex;
   align-items: center;
 }
 
 .logo {
+  margin-left: calc(39vw + 30px);
   font-size: 1rem;
   font-weight: 700;
 }
