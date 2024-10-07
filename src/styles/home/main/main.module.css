@@ -1,6 +1,0 @@
-.main {
-  width: 100%;
-  height: fit-content;
-  min-height: calc(100% - 50px - 350px);
-  display: flex;
-}
