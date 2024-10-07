@@ -1,0 +1,23 @@
+.post_list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.post_item {
+  display: flex;
+  gap: 15px;
+}
+
+.post_order,
+.post_title {
+  color: #000;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.post_title {
+  width: 100%;
+}
