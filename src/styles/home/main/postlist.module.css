@@ -7,6 +7,8 @@
 .post_item {
   display: flex;
   gap: 15px;
+
+  cursor: pointer;
 }
 
 .post_order,
@@ -14,10 +16,14 @@
   color: #000;
   font-size: 15px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   line-height: normal;
 }
 
 .post_title {
   width: 100%;
+}
+
+.active {
+  font-weight: 600;
 }
