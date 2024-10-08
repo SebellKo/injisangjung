@@ -4,16 +4,25 @@
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   background: #fff;
 }
 
-.logo {
-  margin-left: 30px;
-
+.logo,
+.new_post {
   color: #000;
   font-size: 14px;
   font-weight: 700;
 
   cursor: pointer;
+}
+
+.logo {
+  margin-left: 30px;
+}
+
+.new_post {
+  margin-right: 30px;
+  font-weight: 500;
 }
