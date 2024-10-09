@@ -85,7 +85,7 @@
   color: #000;
   font-size: 12px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   line-height: normal;
 }
 
@@ -93,9 +93,8 @@
   color: #000;
   font-size: 12px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   line-height: normal;
-  text-decoration-line: underline;
 
   cursor: pointer;
 }
@@ -106,4 +105,18 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.active_title {
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.active_order {
+  font-weight: 700;
+}
+
+.active_pagination_item {
+  color: #000;
+  text-decoration: underline;
 }
