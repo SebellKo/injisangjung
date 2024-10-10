@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import style from '@/styles/home/main/postlist.module.css';
+import convertOrderNum from '@/utils/convertOrderNum';
 
 const mock = [
   {
@@ -31,12 +32,6 @@ const mock = [
       'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
   },
 ];
-
-const convertOrderNum = (order: number) => {
-  if (order < 10) return `00${order}`;
-  if (order < 100 && order >= 10) return `0${order}`;
-  return order;
-};
 
 function PostList() {
   const [selected, setSelected] = useState<number>();
