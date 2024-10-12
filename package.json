@@ -10,11 +10,15 @@
   },
   "dependencies": {
     "@uiw/react-md-editor": "^3.25.6",
+    "crypto": "^1.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.9.0",
     "next": "14.2.11",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.7",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
