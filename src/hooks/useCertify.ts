@@ -13,7 +13,12 @@ const useCertify = () => {
     sessionStorage.setItem('isAdmin', 'true');
   };
 
-  return { handleCertify };
+  const checkIsAdmin = () => {
+    const isAdmin = sessionStorage.getItem('isAdmin') === 'true';
+    return isAdmin;
+  };
+
+  return { handleCertify, checkIsAdmin };
 };
 
 export default useCertify;
