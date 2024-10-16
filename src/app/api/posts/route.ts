@@ -1,5 +1,6 @@
 import { connectDB } from '@/db/db';
 import { NextRequest, NextResponse } from 'next/server';
+import jwt from 'jsonwebtoken';
 
 interface PostRes {
   id: string;
@@ -17,7 +18,17 @@ export async function GET() {
 }
 
 export async function POST(req: NextRequest) {
+  const receivedToken = req.headers.get('Authorization')?.split(' ')[1];
+
+  if (!receivedToken)
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+
   try {
+    const decoded = jwt.verify(
+      receivedToken,
+      process.env.TOKEN_SECRET_KEY as string
+    );
+
     const db = (await connectDB).db('injisangjung');
     const body = await req.json();
 
@@ -44,6 +55,6 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ ok: true }, { status: 200 });
   } catch (error) {
-    return NextResponse.json({ error: error }, { status: 500 });
+    return NextResponse.json({ error: 'Invalid token' }, { status: 403 });
   }
 }
