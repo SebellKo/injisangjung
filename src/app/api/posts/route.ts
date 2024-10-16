@@ -1,5 +1,4 @@
 import { connectDB } from '@/db/db';
-import { PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
 import { NextRequest, NextResponse } from 'next/server';
 
 interface PostRes {
@@ -10,16 +9,6 @@ interface PostRes {
   category: string;
 }
 
-const bucket = process.env.AWS_BUCKET;
-
-const s3 = new S3Client({
-  region: process.env.AWS_REGION,
-  credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY as string,
-    secretAccessKey: process.env.AWS_SECRET_KEY as string,
-  },
-});
-
 export async function GET() {
   const db = (await connectDB).db('injisangjung');
   const result = await db.collection<PostRes>('posts').find().toArray();
@@ -28,20 +17,33 @@ export async function GET() {
 }
 
 export async function POST(req: NextRequest) {
-  const formData = await req.formData();
-  const files = formData.getAll('image') as File[];
-  const body = (await files[0].arrayBuffer()) as Buffer;
+  try {
+    const db = (await connectDB).db('injisangjung');
+    const body = await req.json();
 
-  const result = await s3.send(
-    new PutObjectCommand({
-      Bucket: bucket,
-      Key: files[0].name,
-      Body: body,
-      ContentType: 'image/*',
-    })
-  );
+    const postData = {
+      category: body.category,
+      content: body.postContent,
+      date: new Date(),
+      title: body.title,
+    };
 
-  console.log(result);
+    const post = await db.collection('posts').insertOne(postData);
 
-  return NextResponse.json({ ok: true });
+    const postId = post.insertedId;
+
+    const postPreviewData = {
+      postId: postId,
+      title: body.title,
+      desc: body.desc,
+      previewUrl: body.previewUrl,
+      category: body.category,
+    };
+
+    await db.collection('post-preview').insertOne(postPreviewData);
+
+    return NextResponse.json({ ok: true }, { status: 200 });
+  } catch (error) {
+    return NextResponse.json({ error: error }, { status: 500 });
+  }
 }
