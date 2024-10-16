@@ -1,6 +1,6 @@
 'use client';
 
-import React, { ChangeEvent, useEffect, useRef, useState } from 'react';
+import React, { ChangeEvent, useRef, useState } from 'react';
 import MDEditor, {
   commands,
   ICommand,
@@ -8,11 +8,12 @@ import MDEditor, {
   TextState,
 } from '@uiw/react-md-editor';
 
-function Editor() {
-  const [value, setValue] = useState<string | undefined>('Hello');
-  const [imageUrl, setImageUrl] = useState<string>(
-    'https://injisangjung.s3.ap-northeast-2.amazonaws.com/image.jpg'
-  );
+interface Props {
+  postValue: string | undefined;
+  setPostValue: (value: string | undefined) => void;
+}
+
+function Editor({ postValue, setPostValue }: Props) {
   const apiRef = useRef<TextAreaTextApi | null>(null);
 
   const editCommands = [...commands.getCommands()];
@@ -28,7 +29,7 @@ function Editor() {
       const formData = new FormData();
       formData.append('image', event.target.files[0]);
 
-      const response = await fetch('api/posts', {
+      const response = await fetch('api/posts/upload-image', {
         method: 'POST',
         body: formData,
         headers: {
@@ -36,9 +37,9 @@ function Editor() {
         },
       });
 
-      console.log(await response.json());
+      const result = await response.json();
 
-      let modifyText = `![image](${imageUrl})`;
+      let modifyText = `![image](${result.url})`;
       if (api) api.replaceSelection(modifyText);
     } catch (error) {
       console.log(error);
@@ -87,28 +88,6 @@ function Editor() {
     },
   };
 
-  // useEffect(() => {
-  //   const imageInput = document.getElementById('imageInput');
-
-  //   const handleChange = (event: Event) => {
-  //     const target = event.target as HTMLInputElement;
-  //     saveFileImage(
-  //       { target } as ChangeEvent<HTMLInputElement>,
-  //       apiRef.current
-  //     );
-  //   };
-
-  //   if (imageInput) {
-  //     imageInput.addEventListener('change', handleChange);
-  //   }
-
-  //   return () => {
-  //     if (imageInput) {
-  //       imageInput.removeEventListener('change', handleChange);
-  //     }
-  //   };
-  // }, []);
-
   editCommands[imageIndex] = image;
 
   return (
@@ -117,8 +96,8 @@ function Editor() {
         visibleDragbar={false}
         enableScroll={false}
         height={800}
-        value={value}
-        onChange={setValue}
+        value={postValue}
+        onChange={setPostValue}
         commands={[...editCommands]}
       ></MDEditor>
     </div>
