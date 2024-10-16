@@ -3,26 +3,69 @@
 import React, { useState } from 'react';
 import style from '@/styles/new-post/main/banner.module.css';
 
-function Banner() {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+const categories = ['Tech', 'Writing', 'Daily', 'Project'];
 
-  const handleClickCategory = () => setIsMenuOpen((prev) => !prev);
+interface Props {
+  postValue: string | undefined;
+}
+
+function Banner({ postValue }: Props) {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [previewUrl, setPreviewUrl] = useState<string>('');
+  const [title, setTitle] = useState<string>('');
+  const [desc, setDesc] = useState<string>('');
+  const [category, setCategory] = useState<string>('');
+
+  const handleClickPost = async () => {
+    const body = {
+      title: title,
+      desc: desc,
+      category: category,
+      postContent: postValue,
+      previewUrl: previewUrl,
+    };
+
+    await fetch('api/posts', {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: {
+        Authorization: `Bearer ${sessionStorage.getItem('accessToken')}`,
+      },
+    });
+  };
 
   return (
     <div className={style.banner}>
       <div className={style.info}>
-        <input type="text" className={style.title} placeholder="Title"></input>
+        <input
+          type="text"
+          className={style.title}
+          placeholder="Title"
+          onChange={(event) => setTitle(event.target.value)}
+        ></input>
         <textarea
           className={style.desc}
           placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          onChange={(event) => setDesc(event.target.value)}
         ></textarea>
       </div>
       <div className={style.interaction_section}>
         <div className={style.button_with_drop_down}>
           <ul className={style.button_wrapper}>
             <li>
-              <button className={style.button} onClick={handleClickCategory}>
-                category
+              <input
+                className={style.image_input}
+                type="text"
+                placeholder="image url"
+                onChange={(event) => setPreviewUrl(event.target.value)}
+              ></input>
+            </li>
+            <li>
+              <button
+                className={style.button}
+                onClick={() => setIsMenuOpen((prev) => !prev)}
+              >
+                {category === '' ? 'category' : category}
                 <img
                   className={style.drop_down_icon}
                   src="/assets/icons/drop-down.svg"
@@ -30,25 +73,36 @@ function Banner() {
               </button>
             </li>
             <li>
-              <button className={style.button}>image</button>
-            </li>
-            <li>
-              <button className={style.button}>post</button>
+              <button className={style.button} onClick={handleClickPost}>
+                post
+              </button>
             </li>
           </ul>
           {isMenuOpen && (
             <ul className={style.drop_down_menu}>
-              <li className={style.drop_down_menu_item}>Tech</li>
-              <li className={style.drop_down_menu_item}>Writing</li>
-              <li className={style.drop_down_menu_item}>Daily</li>
-              <li className={style.drop_down_menu_item}>Project</li>
+              {categories.map((categoryItem) => (
+                <li
+                  className={style.drop_down_menu_item}
+                  onClick={() => {
+                    setCategory(categoryItem);
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  {categoryItem}
+                </li>
+              ))}
             </ul>
           )}
         </div>
-        <img
-          className={style.preview_image}
-          src="/assets/images/IMG_6223.jpeg"
-        ></img>
+        {previewUrl === '' ? (
+          <div className={style.empty_box}></div>
+        ) : (
+          <img
+            className={style.preview_image}
+            src={previewUrl}
+            alt="preview image"
+          ></img>
+        )}
       </div>
     </div>
   );
