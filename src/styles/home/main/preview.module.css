@@ -7,12 +7,13 @@
 .preview_image {
   width: 350px;
   height: 350px;
-  background: #ddd;
+  object-fit: contain;
+  background: #fff;
 }
 
 .preview_desc {
   width: 350px;
-  height: 185px;
+  max-height: 185px;
   overflow-y: scroll;
   background: #ffe63d;
 
