@@ -4,57 +4,36 @@ import React, { useState } from 'react';
 import style from '@/styles/home/main/postlist.module.css';
 import convertOrderNum from '@/utils/convertOrderNum';
 
-const mock = [
-  {
-    order: 1,
-    title: 'Example Title',
-  },
-  {
-    order: 2,
-    title: 'Neque porro quisquam est qui dolorem',
-  },
-  {
-    order: 3,
-    title:
-      'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
-  },
-  {
-    order: 1,
-    title: 'Example Title',
-  },
-  {
-    order: 2,
-    title: 'Neque porro quisquam est qui dolorem',
-  },
-  {
-    order: 3,
-    title:
-      'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit',
-  },
-];
+interface Props {
+  posts: {
+    _id: string;
+    postId: string;
+    title: string;
+    desc: string;
+    previewUrl: string;
+    category: string;
+  }[];
+  selectedPost: number | undefined;
+  setSelectedPost: (value: number) => void;
+}
 
-function PostList() {
-  const [selected, setSelected] = useState<number>();
-
-  const handleClickPost = (index: number) => {
-    console.log('click');
-    setSelected(index);
-  };
+function PostList({ posts, selectedPost, setSelectedPost }: Props) {
+  const handleClickPost = (index: number) => setSelectedPost(index);
 
   return (
     <ul className={style.post_list}>
-      {mock.map((post, index) => (
+      {posts.map((post, index) => (
         <li className={style.post_item} onClick={() => handleClickPost(index)}>
           <h3
             className={`${style.post_order} ${
-              index === selected ? style.active : ''
+              index === selectedPost ? style.active : ''
             }`}
           >
-            {convertOrderNum(post.order)}
+            {convertOrderNum(index + 1)}
           </h3>
           <h3
             className={`${style.post_order} ${
-              index === selected ? style.active : ''
+              index === selectedPost ? style.active : ''
             }`}
           >
             {post.title}

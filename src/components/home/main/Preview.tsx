@@ -1,22 +1,22 @@
 import React from 'react';
 import style from '@/styles/home/main/preview.module.css';
 
-function Preview() {
+interface Props {
+  currentPost: {
+    _id: string;
+    postId: string;
+    title: string;
+    desc: string;
+    previewUrl: string;
+    category: string;
+  } | null;
+}
+
+function Preview({ currentPost }: Props) {
   return (
     <div className={style.preview}>
-      <img
-        src="/assets/images/IMG_6223.jpeg"
-        className={style.preview_image}
-      ></img>
-      <p className={style.preview_desc}>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum{' '}
-      </p>
+      <img src={currentPost?.previewUrl} className={style.preview_image}></img>
+      <p className={style.preview_desc}>{currentPost?.desc}</p>
     </div>
   );
 }

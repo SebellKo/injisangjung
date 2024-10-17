@@ -12,7 +12,7 @@ interface PostRes {
 
 export async function GET() {
   const db = (await connectDB).db('injisangjung');
-  const result = await db.collection<PostRes>('posts').find().toArray();
+  const result = await db.collection<PostRes>('post-preview').find().toArray();
 
   return NextResponse.json(result, { status: 200 });
 }
