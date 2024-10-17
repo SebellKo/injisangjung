@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import style from '@/styles/home/main/categorylist.module.css';
+import useSelectedPostStore from '@/store/useSelectedPostStore';
 
 const mock = [
   {
@@ -29,11 +30,20 @@ const mock = [
   },
 ];
 
-function CategoryList() {
-  const [selected, setSelected] = useState<number>(0);
+interface Props {
+  setCurrentCategory: (value: string) => void;
+}
 
-  const handleClickCategory = (index: number) => {
+function CategoryList({ setCurrentCategory }: Props) {
+  const [selected, setSelected] = useState<number>(0);
+  const resetSelectedPost = useSelectedPostStore(
+    (state) => state.resetSelectedPost
+  );
+
+  const handleClickCategory = (category: string, index: number) => {
     setSelected(index);
+    setCurrentCategory(category);
+    resetSelectedPost();
   };
 
   return (
@@ -41,7 +51,7 @@ function CategoryList() {
       {mock.map((category, index) => (
         <li
           className={style.category_item}
-          onClick={() => handleClickCategory(index)}
+          onClick={() => handleClickCategory(category.title, index)}
         >
           <h3
             className={`${style.category_name} ${

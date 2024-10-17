@@ -8,6 +8,7 @@ import style from '@/styles/home/home.module.css';
 async function Home() {
   const posts = await fetch('http://localhost:3000/api/posts', {
     method: 'GET',
+    cache: 'no-store',
   }).then((response) => response.json());
 
   return (

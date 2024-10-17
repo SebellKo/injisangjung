@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import style from '@/styles/home/main/postlist.module.css';
 import convertOrderNum from '@/utils/convertOrderNum';
+import useSelectedPostStore from '@/store/useSelectedPostStore';
 
 interface Props {
   posts: {
@@ -13,11 +14,14 @@ interface Props {
     previewUrl: string;
     category: string;
   }[];
-  selectedPost: number | undefined;
-  setSelectedPost: (value: number) => void;
 }
 
-function PostList({ posts, selectedPost, setSelectedPost }: Props) {
+function PostList({ posts }: Props) {
+  const selectedPost = useSelectedPostStore((state) => state.selectedPost);
+  const setSelectedPost = useSelectedPostStore(
+    (state) => state.setSelectedPost
+  );
+
   const handleClickPost = (index: number) => setSelectedPost(index);
 
   return (

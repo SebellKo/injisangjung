@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import style from '@/styles/home/main/main.module.css';
 import CategoryList from './CategoryList';
 import Posts from './Posts';
@@ -15,10 +17,16 @@ interface Props {
 }
 
 function Main({ posts }: Props) {
+  const [currentCategory, setCurrentCategory] = useState<string>('All');
+  const filteredPost =
+    currentCategory === 'All'
+      ? posts
+      : posts.filter((postItem) => postItem.category === currentCategory);
+
   return (
     <div className={style.main}>
-      <CategoryList></CategoryList>
-      <Posts posts={posts}></Posts>
+      <CategoryList setCurrentCategory={setCurrentCategory}></CategoryList>
+      <Posts posts={filteredPost}></Posts>
     </div>
   );
 }

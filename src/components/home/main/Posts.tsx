@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import style from '@/styles/home/main/posts.module.css';
 import PostList from './PostList';
 import Preview from './Preview';
+import useSelectedPostStore from '@/store/useSelectedPostStore';
 
 interface Props {
   posts: {
@@ -17,17 +18,12 @@ interface Props {
 }
 
 function Posts({ posts }: Props) {
-  const [selectedPost, setSelectedPost] = useState<number | undefined>();
+  const selectedPost = useSelectedPostStore((state) => state.selectedPost);
   const currentPost = selectedPost !== undefined ? posts[selectedPost] : null;
-  console.log(currentPost);
 
   return (
     <div className={style.posts}>
-      <PostList
-        posts={posts}
-        selectedPost={selectedPost}
-        setSelectedPost={setSelectedPost}
-      ></PostList>
+      <PostList posts={posts}></PostList>
       <Preview currentPost={currentPost}></Preview>
     </div>
   );

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import style from '@/styles/new-post/main/banner.module.css';
+import { useRouter } from 'next/navigation';
 
 const categories = ['Tech', 'Writing', 'Daily', 'Project'];
 
@@ -15,6 +16,7 @@ function Banner({ postValue }: Props) {
   const [title, setTitle] = useState<string>('');
   const [desc, setDesc] = useState<string>('');
   const [category, setCategory] = useState<string>('');
+  const router = useRouter();
 
   const handleClickPost = async () => {
     const body = {
@@ -25,13 +27,17 @@ function Banner({ postValue }: Props) {
       previewUrl: previewUrl,
     };
 
-    await fetch('api/posts', {
+    const response = await fetch('api/posts', {
       method: 'POST',
       body: JSON.stringify(body),
       headers: {
         Authorization: `Bearer ${sessionStorage.getItem('accessToken')}`,
       },
     });
+
+    const { ok } = await response.json();
+
+    if (ok) router.push('/');
   };
 
   return (
