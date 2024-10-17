@@ -6,8 +6,7 @@ import useCertify from '@/hooks/useCertify';
 import { useRouter } from 'next/navigation';
 
 function Header() {
-  const { checkIsAdmin } = useCertify();
-  const isAdmin = checkIsAdmin();
+  const { isAdmin } = useCertify();
   const router = useRouter();
 
   const handleClickPost = () => router.push('/new-post');

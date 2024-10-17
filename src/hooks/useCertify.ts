@@ -1,4 +1,15 @@
+import { useEffect, useState } from 'react';
+
 const useCertify = () => {
+  const [isAdmin, setIsAdmin] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const adminStatus = sessionStorage.getItem('isAdmin') === 'true';
+      setIsAdmin(adminStatus);
+    }
+  }, []);
+
   const handleCertify = async (id: string, password: string) => {
     const response = await fetch('/api/auth', {
       method: 'POST',
@@ -9,16 +20,14 @@ const useCertify = () => {
     });
     const { accessToken } = await response.json();
 
-    sessionStorage.setItem('accessToken', accessToken);
-    sessionStorage.setItem('isAdmin', 'true');
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('accessToken', accessToken);
+      sessionStorage.setItem('isAdmin', 'true');
+      setIsAdmin(true);
+    }
   };
 
-  const checkIsAdmin = () => {
-    const isAdmin = sessionStorage.getItem('isAdmin') === 'true';
-    return isAdmin;
-  };
-
-  return { handleCertify, checkIsAdmin };
+  return { handleCertify, isAdmin };
 };
 
 export default useCertify;
