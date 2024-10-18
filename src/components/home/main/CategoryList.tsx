@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import style from '@/styles/home/main/categorylist.module.css';
 import useSelectedPostStore from '@/store/useSelectedPostStore';
 
-const mock = [
+const category = [
   {
     title: 'All',
   },
@@ -48,8 +48,9 @@ function CategoryList({ setCurrentCategory }: Props) {
 
   return (
     <ul className={style.category_list}>
-      {mock.map((category, index) => (
+      {category.map((category, index) => (
         <li
+          key={index}
           className={style.category_item}
           onClick={() => handleClickCategory(category.title, index)}
         >

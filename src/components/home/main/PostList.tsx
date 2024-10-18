@@ -27,7 +27,11 @@ function PostList({ posts }: Props) {
   return (
     <ul className={style.post_list}>
       {posts.map((post, index) => (
-        <li className={style.post_item} onClick={() => handleClickPost(index)}>
+        <li
+          key={post._id}
+          className={style.post_item}
+          onClick={() => handleClickPost(index)}
+        >
           <h3
             className={`${style.post_order} ${
               index === selectedPost ? style.active : ''
