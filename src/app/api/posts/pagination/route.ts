@@ -32,7 +32,10 @@ export async function GET(req: NextRequest) {
 
   const paginatedPostPreviews = postPreviews.slice(startIndex, endIndex);
 
-  const totalPage = Math.floor(postPreviews.length / postsPerPage) + 1;
+  const totalPage =
+    postPreviews.length % postsPerPage === 0
+      ? Math.floor(postPreviews.length / postsPerPage)
+      : Math.floor(postPreviews.length / postsPerPage) + 1;
 
   return NextResponse.json({
     postPreviews: paginatedPostPreviews,
