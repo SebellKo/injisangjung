@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import style from '@/styles/posts/banner.module.css';
 import convertOrderNum from '@/utils/convertOrderNum';
-import { useParams, useSearchParams } from 'next/navigation';
+import { useParams, useRouter, useSearchParams } from 'next/navigation';
 
 type PostPreview = {
   _id: string;
@@ -16,13 +16,14 @@ type PostPreview = {
 };
 
 function Banner() {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const { postId } = useParams<{ postId: string }>();
   const category = searchParams.get('category');
 
-  const [currentPage, setCurrentPage] = useState<number>(0);
+  const [currentPage, setCurrentPage] = useState<number | null>(null);
   const [postPreviews, setPostPreviews] = useState<PostPreview[]>();
-  const [totalPost, settotalPost] = useState<number>();
+  const [totalPost, settotalPost] = useState<number>(0);
   const [totalPage, setTotalPage] = useState<number>(0);
 
   useEffect(() => {
@@ -64,7 +65,15 @@ function Banner() {
         </div>
         <ul className={style.post_list}>
           {postPreviews?.map((postItem, index) => (
-            <li key={postItem._id} className={style.post_list_item}>
+            <li
+              key={postItem._id}
+              className={style.post_list_item}
+              onClick={() =>
+                router.push(
+                  `/posts/${postItem.postId}?category=${postItem.category}`
+                )
+              }
+            >
               <div className={style.order_title}>
                 <h3
                   className={`${style.order} ${

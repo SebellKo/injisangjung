@@ -6,7 +6,11 @@ export async function GET(req: NextRequest) {
   const searchParams = req.nextUrl.searchParams;
   const postId = searchParams.get('postId')!;
   const category = searchParams.get('category');
-  let currentPage = Number(searchParams.get('currentPage'));
+  let currentPage =
+    searchParams.get('currentPage') === 'null'
+      ? null
+      : Number(searchParams.get('currentPage'));
+  console.log(searchParams.get('currentPage') === 'null');
 
   const postsPerPage = 5;
 
@@ -20,7 +24,9 @@ export async function GET(req: NextRequest) {
     return postItem.postId.equals(new ObjectId(postId));
   });
 
-  if (currentPage === 0) currentPage = Math.floor(postIdIndex / postsPerPage);
+  if (currentPage === null) {
+    currentPage = Math.floor(postIdIndex / postsPerPage);
+  }
 
   const startIndex = currentPage * postsPerPage;
   const endIndex = startIndex + postsPerPage;
