@@ -3,13 +3,7 @@ import Header from '@/components/common/Header';
 import Post from '@/components/posts/Post';
 import style from '@/styles/posts/post-page.module.css';
 
-interface Props {
-  params: {
-    postId: string;
-  };
-}
-
-function PostPage({ params }: Props) {
+function PostPage() {
   return (
     <div className={style.post_page}>
       <Header></Header>

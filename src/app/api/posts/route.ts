@@ -32,10 +32,12 @@ export async function POST(req: NextRequest) {
     const db = (await connectDB).db('injisangjung');
     const body = await req.json();
 
+    const date = new Date();
+
     const postData = {
       category: body.category,
       content: body.postContent,
-      date: new Date(),
+      date: date,
       title: body.title,
     };
 
@@ -49,6 +51,7 @@ export async function POST(req: NextRequest) {
       desc: body.desc,
       previewUrl: body.previewUrl,
       category: body.category,
+      date: date,
     };
 
     await db.collection('post-preview').insertOne(postPreviewData);
