@@ -10,7 +10,6 @@ export async function GET(req: NextRequest) {
     searchParams.get('currentPage') === 'null'
       ? null
       : Number(searchParams.get('currentPage'));
-  console.log(searchParams.get('currentPage') === 'null');
 
   const postsPerPage = 5;
 
