@@ -27,7 +27,7 @@
   width: 770px;
 
   padding-top: 80px;
-  margin: 0 auto;
+  margin: 0 auto 100px auto;
 }
 
 .main_anchor {
@@ -54,12 +54,12 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
 }
 
 .post_title {
-  color: #1e1ca3;
-  font-size: 30px;
+  color: #1d1ac7;
+  font-size: 45px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;

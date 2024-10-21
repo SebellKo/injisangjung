@@ -1,4 +1,6 @@
 .main {
+  height: calc(72% - 100px);
+
   padding: 0 30px;
   display: flex;
   gap: 80px;
