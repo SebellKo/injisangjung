@@ -1,7 +1,5 @@
 import jwt from 'jsonwebtoken';
 
-const secretKey = 'sejonginjisangjungkey';
-
 export const createToken = (
   id: string,
   tokenType: string,

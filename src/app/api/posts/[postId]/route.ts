@@ -11,7 +11,7 @@ interface Params {
 export async function GET(req: NextRequest, { params }: Params) {
   const postId = params.postId;
 
-  const db = (await connectDB).db('injisangjung');
+  const db = (await connectDB).db(process.env.MONGODB_NAME);
 
   const result = await db
     .collection('posts')

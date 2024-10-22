@@ -13,7 +13,7 @@ export async function GET(req: NextRequest) {
 
   const postsPerPage = 5;
 
-  const db = (await connectDB).db('injisangjung');
+  const db = (await connectDB).db(process.env.MONGODB_NAME);
   const postPreviews = await db
     .collection('post-preview')
     .find({ category: category })
