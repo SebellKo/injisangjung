@@ -10,7 +10,7 @@ export const createToken = (
       id: id,
       tokenType: tokenType,
     },
-    process.env.TOKEN_SECRET_KEY!,
+    process.env.INJISANGJUNG_TOKEN_SECRET_KEY!,
     {
       expiresIn: expirationPeriod,
       issuer: 'injisangjung',

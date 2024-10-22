@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
   try {
     const decoded = jwt.verify(
       receivedToken,
-      process.env.TOKEN_SECRET_KEY as string
+      process.env.INJISANGJUNG_TOKEN_SECRET_KEY as string
     );
 
     const db = (await connectDB).db(process.env.MONGODB_COLLECTION_NAME);

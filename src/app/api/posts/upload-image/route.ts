@@ -7,8 +7,8 @@ const bucket = process.env.AWS_BUCKET;
 const s3 = new S3Client({
   region: process.env.AWS_REGION,
   credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY as string,
-    secretAccessKey: process.env.AWS_SECRET_KEY as string,
+    accessKeyId: process.env.INJISANGJUNG_AWS_ACCESS_KEY as string,
+    secretAccessKey: process.env.INJISANGJUNG_AWS_SECRET_KEY as string,
   },
 });
 
@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
   try {
     const decoded = jwt.verify(
       receivedToken,
-      process.env.TOKEN_SECRET_KEY as string
+      process.env.INJISANGJUNG_TOKEN_SECRET_KEY as string
     );
 
     const formData = await req.formData();
