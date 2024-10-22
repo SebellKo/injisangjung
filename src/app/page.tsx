@@ -6,7 +6,7 @@ import React from 'react';
 import style from '@/styles/home/home.module.css';
 
 async function Home() {
-  const posts = await fetch('http://localhost:3000/api/posts', {
+  const posts = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts`, {
     method: 'GET',
     cache: 'no-store',
   }).then((response) => response.json());
