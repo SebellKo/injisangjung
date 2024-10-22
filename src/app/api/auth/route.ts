@@ -8,7 +8,7 @@ export async function POST(req: NextRequest) {
   try {
     const { id, password } = await req.json();
 
-    const db = (await connectDB).db(process.env.MONGODB_NAME);
+    const db = (await connectDB).db(process.env.MONGODB_COLLECTION_NAME);
     const admin = await db.collection<AdminRes>('admin').findOne({ id: id });
 
     if (admin) {

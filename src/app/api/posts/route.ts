@@ -11,7 +11,7 @@ interface PostRes {
 }
 
 export async function GET() {
-  const db = (await connectDB).db(process.env.MONGODB_NAME);
+  const db = (await connectDB).db(process.env.MONGODB_COLLECTION_NAME);
   const result = await db.collection<PostRes>('post-preview').find().toArray();
 
   return NextResponse.json(result, { status: 200 });
@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
       process.env.TOKEN_SECRET_KEY as string
     );
 
-    const db = (await connectDB).db(process.env.MONGODB_NAME);
+    const db = (await connectDB).db(process.env.MONGODB_COLLECTION_NAME);
     const body = await req.json();
 
     const date = new Date();

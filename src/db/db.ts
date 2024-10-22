@@ -1,6 +1,6 @@
 import { MongoClient } from 'mongodb';
 
-const url = `mongodb+srv://fulfilled7418:${process.env.MONGODB_SECRET_KEY}@${process.env.MONGODB_NAME}.khes1.mongodb.net/?retryWrites=true&w=majority&appName=${process.env.MONGODB_NAME}`;
+const url = `mongodb+srv://fulfilled7418:${process.env.MONGODB_SECRET_KEY}@${process.env.MONGODB_COLLECTION_NAME}.khes1.mongodb.net/?retryWrites=true&w=majority&appName=${process.env.MONGODB_COLLECTION_NAME}`;
 const options: any = { useNewUrlParser: true };
 let connectDB: Promise<MongoClient>;
 
