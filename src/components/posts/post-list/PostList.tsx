@@ -5,16 +5,11 @@ import style from '@/styles/posts/post-list/post-list.module.css';
 import { useParams, useSearchParams } from 'next/navigation';
 import PostListHeader from './PostListHeader';
 import PostListContent from './PostListContent';
+import { PostPreviewRes } from '@/models/posts';
 
-type PostPreview = {
-  _id: string;
-  postId: string;
-  title: string;
-  desc: string;
-  previewUrl: string;
-  category: string;
+interface ExtendPostPrevewRes extends PostPreviewRes {
   date: Date;
-};
+}
 
 function PostList() {
   const searchParams = useSearchParams();
@@ -22,7 +17,7 @@ function PostList() {
   const { postId } = useParams<{ postId: string }>();
 
   const [currentPage, setCurrentPage] = useState<number | null>(null);
-  const [postPreviews, setPostPreviews] = useState<PostPreview[]>();
+  const [postPreviews, setPostPreviews] = useState<ExtendPostPrevewRes[]>([]);
   const [totalPost, settotalPost] = useState<number>(0);
   const [totalPage, setTotalPage] = useState<number>(0);
 

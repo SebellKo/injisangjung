@@ -5,15 +5,10 @@ import style from '@/styles/home/content/posts-preview/post-list.module.css';
 import convertOrderNum from '@/utils/convertOrderNum';
 import useSelectedPostStore from '@/store/useSelectedPostStore';
 
+import { PostPreviewRes } from '@/models/posts';
+
 interface Props {
-  posts: {
-    _id: string;
-    postId: string;
-    title: string;
-    desc: string;
-    previewUrl: string;
-    category: string;
-  }[];
+  posts: PostPreviewRes[];
 }
 
 function PostList({ posts }: Props) {
@@ -28,7 +23,7 @@ function PostList({ posts }: Props) {
     <ul className={style.post_list}>
       {posts.map((post, index) => (
         <li
-          key={post._id}
+          key={String(post._id)}
           className={style.post_item}
           onClick={() => handleClickPost(index)}
         >

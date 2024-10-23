@@ -4,16 +4,10 @@ import React, { useState } from 'react';
 import style from '@/styles/home/content/content.module.css';
 import CategoryList from './category-list/CategoryList';
 import PostsPreview from './posts-preview/PostsPreview';
+import { PostPreviewRes } from '@/models/posts';
 
 interface Props {
-  posts: {
-    _id: string;
-    postId: string;
-    title: string;
-    desc: string;
-    previewUrl: string;
-    category: string;
-  }[];
+  posts: PostPreviewRes[];
 }
 
 function Content({ posts }: Props) {

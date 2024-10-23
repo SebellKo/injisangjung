@@ -5,16 +5,10 @@ import style from '@/styles/home/content/posts-preview/posts-preview.module.css'
 import PostList from './PostList';
 import Preview from './Preview';
 import useSelectedPostStore from '@/store/useSelectedPostStore';
+import { PostPreviewRes } from '@/models/posts';
 
 interface Props {
-  posts: {
-    _id: string;
-    postId: string;
-    title: string;
-    desc: string;
-    previewUrl: string;
-    category: string;
-  }[];
+  posts: PostPreviewRes[];
 }
 
 function PostsPreview({ posts }: Props) {

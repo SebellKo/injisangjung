@@ -1,17 +1,11 @@
 import React from 'react';
 import style from '@/styles/home/content/posts-preview/preview.module.css';
 import Link from 'next/link';
+import { PostPreviewRes } from '@/models/posts';
 
 interface Props {
-  currentPost: {
-    _id: string;
-    postId: string;
-    title: string;
-    desc: string;
-    previewUrl: string;
-    category: string;
-  } | null;
-  selectedPostIndex: number | undefined;
+  currentPost: PostPreviewRes | null;
+  selectedPostIndex?: number;
 }
 
 function Preview({ currentPost }: Props) {

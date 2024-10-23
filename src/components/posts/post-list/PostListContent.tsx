@@ -2,18 +2,14 @@ import React from 'react';
 import style from '@/styles/posts/post-list/post-list-content.module.css';
 import { useParams, useRouter } from 'next/navigation';
 import convertOrderNum from '@/utils/convertOrderNum';
+import { PostPreviewRes } from '@/models/posts';
+
+interface ExtendPostPrevewRes extends PostPreviewRes {
+  date: Date;
+}
 
 interface Props {
-  postPreviews?:
-    | {
-        _id: string;
-        postId: string;
-        title: string;
-        desc: string;
-        previewUrl: string;
-        category: string;
-        date: Date;
-      }[];
+  postPreviews: ExtendPostPrevewRes[];
 }
 
 function PostListContent({ postPreviews }: Props) {
@@ -24,7 +20,7 @@ function PostListContent({ postPreviews }: Props) {
     <ul className={style.post_list}>
       {postPreviews?.map((postItem, index) => (
         <li
-          key={postItem._id}
+          key={String(postItem._id)}
           className={style.post_list_item}
           onClick={() =>
             router.push(
@@ -35,14 +31,14 @@ function PostListContent({ postPreviews }: Props) {
           <div className={style.order_title}>
             <h3
               className={`${style.order} ${
-                postItem.postId === postId && style.active_order
+                String(postItem.postId) === postId && style.active_order
               }`}
             >
               {convertOrderNum(index + 1)}
             </h3>
             <h3
               className={`${style.title} ${
-                postItem.postId === postId && style.active_title
+                String(postItem.postId) === postId && style.active_title
               }`}
             >
               {postItem.title}

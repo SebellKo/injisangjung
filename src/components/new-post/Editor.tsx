@@ -9,8 +9,8 @@ import MDEditor, {
 } from '@uiw/react-md-editor';
 
 interface Props {
-  postValue: string | undefined;
-  setPostValue: (value: string | undefined) => void;
+  postValue?: string;
+  setPostValue: (value?: string) => void;
 }
 
 function Editor({ postValue, setPostValue }: Props) {
