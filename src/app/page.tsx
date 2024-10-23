@@ -13,10 +13,8 @@ async function Home() {
 
   return (
     <div className={style.home}>
-      <Header></Header>
       <Banner></Banner>
       <Main posts={posts}></Main>
-      <Footer></Footer>
     </div>
   );
 }

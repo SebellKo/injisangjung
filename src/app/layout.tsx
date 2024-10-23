@@ -1,5 +1,7 @@
 import { Viewport } from 'next';
 import '../styles/global.css';
+import Header from '@/components/common/Header';
+import Footer from '@/components/common/Footer';
 
 export const metadata = {
   title: 'Next.js',
@@ -20,7 +22,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Header></Header>
+        {children}
+        <Footer></Footer>
+      </body>
     </html>
   );
 }

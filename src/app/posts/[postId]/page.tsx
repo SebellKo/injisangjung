@@ -6,9 +6,7 @@ import style from '@/styles/posts/post-page.module.css';
 function PostPage() {
   return (
     <div className={style.post_page}>
-      <Header></Header>
       <Post></Post>
-      <Footer></Footer>
     </div>
   );
 }
