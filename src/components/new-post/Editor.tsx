@@ -29,7 +29,7 @@ function Editor({ postValue, setPostValue }: Props) {
       const formData = new FormData();
       formData.append('image', event.target.files[0]);
 
-      const response = await fetch('api/posts/upload-image', {
+      const response = await fetch('api/posts/make-post/upload-image', {
         method: 'POST',
         body: formData,
         headers: {

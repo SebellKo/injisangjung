@@ -27,7 +27,7 @@ function Banner({ postValue }: Props) {
       previewUrl: previewUrl,
     };
 
-    const response = await fetch('api/posts', {
+    const response = await fetch('api/posts/make-post', {
       method: 'POST',
       body: JSON.stringify(body),
       headers: {
