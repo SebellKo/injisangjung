@@ -1,11 +1,12 @@
 import { connectDB } from '@/db/db';
+import { PostPreviewRes } from '@/models/posts';
 import { ObjectId } from 'mongodb';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(req: NextRequest) {
   const searchParams = req.nextUrl.searchParams;
   const postId = searchParams.get('postId')!;
-  const category = searchParams.get('category');
+  const category = searchParams.get('category')!;
   let currentPage =
     searchParams.get('currentPage') === 'null'
       ? null
@@ -15,7 +16,7 @@ export async function GET(req: NextRequest) {
 
   const db = (await connectDB).db(process.env.MONGODB_COLLECTION_NAME);
   const postPreviews = await db
-    .collection('post-preview')
+    .collection<PostPreviewRes>('post-preview')
     .find({ category: category })
     .toArray();
 

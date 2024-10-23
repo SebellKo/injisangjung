@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import style from '@/styles/posts/content.module.css';
+import style from '@/styles/posts/content/content.module.css';
 import Detail from './Detail';
 import { useParams } from 'next/navigation';
 import Toc from './Toc';

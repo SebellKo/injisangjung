@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
       const isAdmin = getHashPassword(password, salt) === pwd;
 
       if (isAdmin) {
-        const token = createToken(_id, 'access', '12h');
+        const token = createToken(String(_id), 'access', '12h');
 
         await db
           .collection('admin')
