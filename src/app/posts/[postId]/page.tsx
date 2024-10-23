@@ -1,12 +1,12 @@
-import Footer from '@/components/common/Footer';
-import Header from '@/components/common/Header';
-import Post from '@/components/posts/Post';
+import Content from '@/components/posts/content/Content';
+import PostList from '@/components/posts/post-list/PostList';
 import style from '@/styles/posts/post-page.module.css';
 
 function PostPage() {
   return (
     <div className={style.post_page}>
-      <Post></Post>
+      <PostList></PostList>
+      <Content></Content>
     </div>
   );
 }

@@ -1,0 +1,19 @@
+.post_list {
+  width: 100%;
+  min-height: 160px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list_container {
+  padding: 60px 60px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 13px;
+
+  background: #ffe63d;
+}

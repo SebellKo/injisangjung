@@ -1,0 +1,52 @@
+.post_list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.post_list_item {
+  width: 650px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.order_title {
+  display: flex;
+  gap: 33px;
+}
+
+.order {
+  color: #000;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.title {
+  color: #000;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  cursor: pointer;
+}
+
+.date {
+  color: #8a8a8a;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.active_title {
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.active_order {
+  font-weight: 700;
+}

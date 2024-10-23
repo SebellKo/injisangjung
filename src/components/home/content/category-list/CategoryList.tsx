@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import style from '@/styles/home/main/categorylist.module.css';
+import style from '@/styles/home/content/category-list/category-list.module.css';
 import useSelectedPostStore from '@/store/useSelectedPostStore';
 
 const category = [

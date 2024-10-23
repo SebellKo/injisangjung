@@ -1,9 +1,3 @@
-.content_container {
-  width: 100%;
-
-  display: flex;
-}
-
 .anchor_list_container {
   position: fixed;
   top: 325px;
@@ -21,13 +15,6 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
-
-.post_content {
-  width: 770px;
-
-  padding-top: 80px;
-  margin: 0 auto 100px auto;
 }
 
 .main_anchor {
@@ -48,28 +35,4 @@
   line-height: 18px;
 
   cursor: pointer;
-}
-
-.post_info {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-bottom: 80px;
-}
-
-.post_title {
-  color: #1d1ac7;
-  font-size: 45px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
-
-.post_date,
-.post_author {
-  color: #000;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
 }

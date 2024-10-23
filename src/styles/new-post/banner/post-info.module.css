@@ -1,0 +1,43 @@
+.info {
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.title {
+  color: #000;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  border: 0;
+  background: none;
+  outline: none;
+}
+
+.title::placeholder {
+  color: #000;
+}
+
+.desc {
+  width: 70%;
+  height: 100%;
+
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  border: 0;
+  background: none;
+  outline: none;
+  resize: none;
+}
+
+.desc::placeholder {
+  color: #000;
+}

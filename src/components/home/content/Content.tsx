@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import style from '@/styles/home/main/main.module.css';
-import CategoryList from './CategoryList';
-import Posts from './Posts';
+import style from '@/styles/home/content/content.module.css';
+import CategoryList from './category-list/CategoryList';
+import PostsPreview from './posts-preview/PostsPreview';
 
 interface Props {
   posts: {
@@ -16,7 +16,7 @@ interface Props {
   }[];
 }
 
-function Main({ posts }: Props) {
+function Content({ posts }: Props) {
   const [currentCategory, setCurrentCategory] = useState<string>('All');
   const filteredPost =
     currentCategory === 'All'
@@ -26,9 +26,9 @@ function Main({ posts }: Props) {
   return (
     <div className={style.main}>
       <CategoryList setCurrentCategory={setCurrentCategory}></CategoryList>
-      <Posts posts={filteredPost}></Posts>
+      <PostsPreview posts={filteredPost}></PostsPreview>
     </div>
   );
 }
 
-export default Main;
+export default Content;

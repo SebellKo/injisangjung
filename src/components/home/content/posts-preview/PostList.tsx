@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
-import style from '@/styles/home/main/postlist.module.css';
+import React from 'react';
+import style from '@/styles/home/content/posts-preview/post-list.module.css';
 import convertOrderNum from '@/utils/convertOrderNum';
 import useSelectedPostStore from '@/store/useSelectedPostStore';
 

@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
-import style from '@/styles/home/main/posts.module.css';
+import React from 'react';
+import style from '@/styles/home/content/posts-preview/posts-preview.module.css';
 import PostList from './PostList';
 import Preview from './Preview';
 import useSelectedPostStore from '@/store/useSelectedPostStore';
@@ -17,7 +17,7 @@ interface Props {
   }[];
 }
 
-function Posts({ posts }: Props) {
+function PostsPreview({ posts }: Props) {
   const selectedPost = useSelectedPostStore((state) => state.selectedPost);
   const currentPost = selectedPost !== undefined ? posts[selectedPost] : null;
 
@@ -32,4 +32,4 @@ function Posts({ posts }: Props) {
   );
 }
 
-export default Posts;
+export default PostsPreview;

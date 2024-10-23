@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import style from '@/styles/posts/content.module.css';
+import style from '@/styles/posts/content/toc.module.css';
 import Link from 'next/link';
 import parseHeadersForToc from '@/utils/parseHeadersForToc';
 
@@ -32,7 +32,6 @@ function Toc({ content }: Props) {
       '.markdownDiv h1, .markdownDiv h2, .markdownDiv h3'
     );
     headingElements.forEach((element) => observer.current?.observe(element));
-    console.log(headingElements);
 
     return () => observer.current?.disconnect();
   }, [content]);

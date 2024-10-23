@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import style from '@/styles/new-post/main/new-post.module.css';
-import Banner from './Banner';
+import style from '@/styles/new-post/new-post-page.module.css';
+import Banner from './banner/Banner';
 import Editor from './Editor';
 
 function NewPost() {

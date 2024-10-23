@@ -1,5 +1,5 @@
 import React from 'react';
-import style from '@/styles/home/main/preview.module.css';
+import style from '@/styles/home/content/posts-preview/preview.module.css';
 import Link from 'next/link';
 
 interface Props {

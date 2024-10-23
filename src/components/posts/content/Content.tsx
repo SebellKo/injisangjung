@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import style from '@/styles/posts/content.module.css';
 import Detail from './Detail';
 import { useParams } from 'next/navigation';
-import GithubSlugger from 'github-slugger';
 import Toc from './Toc';
 
 function Content() {

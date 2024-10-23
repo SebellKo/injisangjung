@@ -2,7 +2,7 @@
 
 import React from 'react';
 import MDEditor from '@uiw/react-md-editor';
-import style from '@/styles/posts/content.module.css';
+import style from '@/styles/posts/content/detail.module.css';
 
 interface Props {
   detail: {
