@@ -1,3 +1,4 @@
+import { ERROR_MESSAGE } from '@/constant/message';
 import { connectDB } from '@/db/db';
 import { AdminRes } from '@/models/admin';
 import { createToken } from '@/utils/createToken';
@@ -35,13 +36,13 @@ export async function POST(req: NextRequest) {
     }
 
     return NextResponse.json(
-      { message: '일치하는 사용자를 찾을수 없습니다.' },
+      { message: ERROR_MESSAGE.notFound },
       { status: 404 }
     );
   } catch (error) {
     return NextResponse.json(
       {
-        error: '서버오류가 발생했습니다.',
+        error: ERROR_MESSAGE.internalError,
       },
       { status: 500 }
     );

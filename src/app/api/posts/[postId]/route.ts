@@ -1,3 +1,4 @@
+import { ERROR_MESSAGE } from '@/constant/message';
 import { connectDB } from '@/db/db';
 import { PostRes } from '@/models/posts';
 import { ObjectId } from 'mongodb';
@@ -10,13 +11,22 @@ interface Params {
 }
 
 export async function GET(req: NextRequest, { params }: Params) {
-  const postId = params.postId;
+  try {
+    const postId = params.postId;
 
-  const db = (await connectDB).db(process.env.MONGODB_COLLECTION_NAME);
+    const db = (await connectDB).db(process.env.MONGODB_COLLECTION_NAME);
 
-  const result = await db
-    .collection<PostRes>('posts')
-    .findOne({ _id: new ObjectId(postId) });
+    const result = await db
+      .collection<PostRes>('posts')
+      .findOne({ _id: new ObjectId(postId) });
 
-  return NextResponse.json({ result }, { status: 200 });
+    return NextResponse.json({ result }, { status: 200 });
+  } catch (error) {
+    return NextResponse.json(
+      {
+        error: ERROR_MESSAGE.internalError,
+      },
+      { status: 500 }
+    );
+  }
 }

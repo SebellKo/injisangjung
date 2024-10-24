@@ -1,6 +1,7 @@
 import { connectDB } from '@/db/db';
 import { NextRequest, NextResponse } from 'next/server';
 import jwt from 'jsonwebtoken';
+import { ERROR_MESSAGE } from '@/constant/message';
 
 export async function POST(req: NextRequest) {
   const receivedToken = req.headers.get('Authorization')?.split(' ')[1];
@@ -43,6 +44,6 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ ok: true }, { status: 200 });
   } catch (error) {
-    return NextResponse.json({ error: 'Invalid token' }, { status: 403 });
+    return NextResponse.json({ error: ERROR_MESSAGE.invalid }, { status: 403 });
   }
 }

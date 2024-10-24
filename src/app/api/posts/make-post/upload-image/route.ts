@@ -1,6 +1,7 @@
 import { PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
 import { NextRequest, NextResponse } from 'next/server';
 import jwt from 'jsonwebtoken';
+import { ERROR_MESSAGE } from '@/constant/message';
 
 const bucket = process.env.AWS_BUCKET;
 
@@ -42,6 +43,6 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ ok: true, url: imageUrl }, { status: 200 });
   } catch (error) {
-    return NextResponse.json({ error: 'Invalid token' }, { status: 403 });
+    return NextResponse.json({ error: ERROR_MESSAGE.invalid }, { status: 403 });
   }
 }
