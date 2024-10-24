@@ -3,32 +3,7 @@
 import React, { useState } from 'react';
 import style from '@/styles/home/content/category-list/category-list.module.css';
 import useSelectedPostStore from '@/store/useSelectedPostStore';
-
-const category = [
-  {
-    title: 'All',
-  },
-  {
-    title: 'Tech',
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-  },
-  {
-    title: 'Writing',
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-  },
-  {
-    title: 'Daily',
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-  },
-  {
-    title: 'Project',
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-  },
-];
+import CATEGORY from '@/constant/category';
 
 interface Props {
   setCurrentCategory: (value: string) => void;
@@ -48,7 +23,7 @@ function CategoryList({ setCurrentCategory }: Props) {
 
   return (
     <ul className={style.category_list}>
-      {category.map((category, index) => (
+      {CATEGORY.map((category, index) => (
         <li
           key={index}
           className={style.category_item}

@@ -2,6 +2,10 @@ import React from 'react';
 import style from '@/styles/home/content/posts-preview/preview.module.css';
 import Link from 'next/link';
 import { PostPreviewRes } from '@/models/posts';
+import {
+  PREVIEW_DEFAULT_DESC,
+  PREVIEW_DEFAULT_IMAGE,
+} from '@/constant/preview';
 
 interface Props {
   currentPost: PostPreviewRes | null;
@@ -10,13 +14,10 @@ interface Props {
 
 function Preview({ currentPost }: Props) {
   const imageUrl =
-    currentPost === null
-      ? '/assets/images/preview_default.jpeg'
-      : currentPost.previewUrl;
+    currentPost === null ? PREVIEW_DEFAULT_IMAGE : currentPost.previewUrl;
   const previewDesc =
-    currentPost === null
-      ? "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
-      : currentPost.desc;
+    currentPost === null ? PREVIEW_DEFAULT_DESC : currentPost.desc;
+
   return (
     <Link
       href={`/posts/${currentPost?.postId}?category=${currentPost?.category}`}
