@@ -1,6 +1,6 @@
 'use client';
 
-import React, { ChangeEvent, useRef, useState } from 'react';
+import React, { ChangeEvent, useRef } from 'react';
 import MDEditor, {
   commands,
   ICommand,
@@ -9,8 +9,8 @@ import MDEditor, {
 } from '@uiw/react-md-editor';
 
 interface Props {
-  postValue: string | undefined;
-  setPostValue: (value: string | undefined) => void;
+  postValue?: string;
+  setPostValue: (value?: string) => void;
 }
 
 function Editor({ postValue, setPostValue }: Props) {
@@ -29,7 +29,7 @@ function Editor({ postValue, setPostValue }: Props) {
       const formData = new FormData();
       formData.append('image', event.target.files[0]);
 
-      const response = await fetch('api/posts/upload-image', {
+      const response = await fetch('api/posts/make-post/upload-image', {
         method: 'POST',
         body: formData,
         headers: {

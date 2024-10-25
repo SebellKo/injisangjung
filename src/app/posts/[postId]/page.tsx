@@ -1,14 +1,20 @@
-import Footer from '@/components/common/Footer';
-import Header from '@/components/common/Header';
-import Post from '@/components/posts/Post';
+import Content from '@/components/posts/content/Content';
+import PostList from '@/components/posts/post-list/PostList';
 import style from '@/styles/posts/post-page.module.css';
 
-function PostPage() {
+interface Props {
+  params: {
+    postId: string;
+  };
+}
+
+function PostPage({ params }: Props) {
+  const { postId } = params;
+
   return (
     <div className={style.post_page}>
-      <Header></Header>
-      <Post></Post>
-      <Footer></Footer>
+      <PostList></PostList>
+      <Content postId={postId}></Content>
     </div>
   );
 }

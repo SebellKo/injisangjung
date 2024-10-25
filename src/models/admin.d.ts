@@ -1,5 +1,5 @@
 export interface AdminRes {
-  _id: string;
+  _id: ObjectId;
   id: string;
   pwd: string;
   salt: string;

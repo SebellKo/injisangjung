@@ -1,11 +1,9 @@
-import Footer from '@/components/common/Footer';
-import Header from '@/components/common/Header';
 import Banner from '@/components/home/banner/Banner';
-import Main from '@/components/home/main/Main';
+import Content from '@/components/home/content/Content';
 import React from 'react';
-import style from '@/styles/home/home.module.css';
+import style from '@/styles/home/home-page.module.css';
 
-async function Home() {
+async function HomePage() {
   const posts = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts`, {
     method: 'GET',
     cache: 'no-store',
@@ -13,12 +11,10 @@ async function Home() {
 
   return (
     <div className={style.home}>
-      <Header></Header>
       <Banner></Banner>
-      <Main posts={posts}></Main>
-      <Footer></Footer>
+      <Content posts={posts}></Content>
     </div>
   );
 }
 
-export default Home;
+export default HomePage;
