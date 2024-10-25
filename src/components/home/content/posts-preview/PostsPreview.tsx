@@ -18,10 +18,7 @@ function PostsPreview({ posts }: Props) {
   return (
     <div className={style.posts}>
       <PostList posts={posts}></PostList>
-      <Preview
-        currentPost={currentPost}
-        selectedPostIndex={selectedPost}
-      ></Preview>
+      <Preview currentPost={currentPost}></Preview>
     </div>
   );
 }

@@ -18,7 +18,6 @@ function Toc({ content }: Props) {
     observer.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          console.log('hello');
           if (!entry.isIntersecting) return;
           setActiveToc(entry.target.id);
         });

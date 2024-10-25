@@ -9,7 +9,6 @@ import {
 
 interface Props {
   currentPost: PostPreviewRes | null;
-  selectedPostIndex?: number;
 }
 
 function Preview({ currentPost }: Props) {

@@ -18,7 +18,7 @@ function PostList() {
 
   const [currentPage, setCurrentPage] = useState<number | null>(null);
   const [postPreviews, setPostPreviews] = useState<ExtendPostPrevewRes[]>([]);
-  const [totalPost, settotalPost] = useState<number>(0);
+  const [totalPost, setTotalPost] = useState<number>(0);
   const [totalPage, setTotalPage] = useState<number>(0);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ function PostList() {
       .then((result) => {
         setPostPreviews(result.postPreviews);
         setCurrentPage(result.currentPage);
-        settotalPost(result.totalPost);
+        setTotalPost(result.totalPost);
         setTotalPage(result.totalPage);
       });
   }, [currentPage]);

@@ -1,30 +1,17 @@
-'use client';
-
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import style from '@/styles/posts/content/content.module.css';
 import Detail from './Detail';
-import { useParams } from 'next/navigation';
 import Toc from './Toc';
 
-function Content() {
-  const params = useParams();
-  const { postId } = params;
-  const [postData, setPostData] = useState({
-    category: '',
-    content: '',
-    date: new Date(),
-    title: '',
-    _id: '',
-  });
+interface Props {
+  postId: string;
+}
 
-  useEffect(() => {
-    const fetchPostContent = async () => {
-      const response = await fetch(`/api/posts/${postId}`);
-      const data = await response.json();
-      setPostData(data.result);
-    };
-    if (postId) fetchPostContent();
-  }, [postId]);
+async function Content({ postId }: Props) {
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/posts/${postId}`
+  );
+  const { result: postData } = await response.json();
 
   return (
     <div className={style.content_container}>
