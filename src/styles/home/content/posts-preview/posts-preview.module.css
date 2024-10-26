@@ -5,3 +5,18 @@
   flex: 1;
   justify-content: space-between;
 }
+
+@media screen and (max-width: 480px) {
+  .posts {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .posts > *:first-child {
+    order: 1;
+  }
+
+  .posts > *:last-child {
+    order: 0;
+  }
+}

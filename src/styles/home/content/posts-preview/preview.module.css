@@ -23,3 +23,9 @@
   font-weight: 500;
   line-height: normal;
 }
+
+@media screen and (max-width: 480px) {
+  .preview {
+    gap: 10px;
+  }
+}

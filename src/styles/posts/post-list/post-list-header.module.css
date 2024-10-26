@@ -49,3 +49,9 @@
   color: #000;
   text-decoration: underline;
 }
+
+@media screen and (max-width: 480px) {
+  .list_header {
+    width: 100%;
+  }
+}
