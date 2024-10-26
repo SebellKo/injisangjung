@@ -1,7 +1,12 @@
 .main {
   height: calc(72% - 50px);
 
-  padding: 0 30px;
   display: flex;
   gap: 80px;
+}
+
+@media screen and (max-width: 480px) {
+  .main {
+    height: 100%;
+  }
 }

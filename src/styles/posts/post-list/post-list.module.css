@@ -18,3 +18,11 @@
 
   background: #ffe63d;
 }
+
+@media screen and (max-width: 480px) {
+  .list_container {
+    padding: 30px 30px;
+    width: 100%;
+    min-width: 0;
+  }
+}

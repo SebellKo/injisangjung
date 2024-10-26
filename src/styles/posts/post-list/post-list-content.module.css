@@ -50,3 +50,13 @@
 .active_order {
   font-weight: 700;
 }
+
+@media screen and (max-width: 480px) {
+  .post_list {
+    width: 100%;
+  }
+
+  .post_list_item {
+    width: 100%;
+  }
+}

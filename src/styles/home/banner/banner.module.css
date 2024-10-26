@@ -4,11 +4,15 @@
 }
 
 .title {
-  margin-left: 30px;
-
   color: #1d1ac7;
   font-size: 16px;
   font-style: normal;
   font-weight: 800;
   line-height: normal;
+}
+
+@media screen and (max-width: 480px) {
+  .banner {
+    height: 70px;
+  }
 }

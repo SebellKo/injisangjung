@@ -30,3 +30,9 @@
 .active {
   font-weight: 600;
 }
+
+@media screen and (max-width: 480px) {
+  .post_list {
+    height: 40vh;
+  }
+}
