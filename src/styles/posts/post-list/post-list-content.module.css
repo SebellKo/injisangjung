@@ -13,7 +13,6 @@
 
 .order_title {
   display: flex;
-  gap: 33px;
 }
 
 .order {
@@ -58,5 +57,14 @@
 
   .post_list_item {
     width: 100%;
+  }
+
+  .order_title {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .date {
+    display: none;
   }
 }
