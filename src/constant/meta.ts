@@ -20,4 +20,8 @@ export const META = {
   icons: {
     icon: '/assets/favicon.svg',
   },
+  verification: {
+    naver: '5165db2bef3a83d8fe37df94188c2fcc3ddcb763',
+    google: 'AJzFmVX4rILI2-0uyzAXFW8lNgPAAgqDOYfdcU4SSVk',
+  },
 } as const;
