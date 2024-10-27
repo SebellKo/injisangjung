@@ -21,7 +21,9 @@ export const META = {
     icon: '/assets/favicon.svg',
   },
   verification: {
-    naver: '5165db2bef3a83d8fe37df94188c2fcc3ddcb763',
     google: 'AJzFmVX4rILI2-0uyzAXFW8lNgPAAgqDOYfdcU4SSVk',
+    other: {
+      'naver-site-verification': '5165db2bef3a83d8fe37df94188c2fcc3ddcb763',
+    },
   },
 } as const;
