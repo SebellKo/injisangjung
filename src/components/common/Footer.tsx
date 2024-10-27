@@ -1,12 +1,9 @@
-'use client';
-
-import React, { useState } from 'react';
+import React from 'react';
 import style from '@/styles/common/footer.module.css';
 import Link from 'next/link';
+import Email from './footer/Email';
 
 function Footer() {
-  const [isClick, setIsClick] = useState<boolean>(false);
-
   return (
     <div className={style.footer}>
       <div className={style.content}>
@@ -26,9 +23,7 @@ function Footer() {
           >
             <li>instagram</li>
           </Link>
-          <li onClick={() => setIsClick((prev) => !prev)}>
-            {isClick ? 'fulfilled_@naver.com' : 'email'}
-          </li>
+          <Email></Email>
         </ul>
       </div>
     </div>
