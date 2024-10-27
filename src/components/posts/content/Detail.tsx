@@ -17,8 +17,8 @@ function Detail({ detail }: Props) {
     <div className={style.post_content}>
       <div className={style.post_info}>
         <h1 className={style.post_title}>{detail.title}</h1>
-        <h3 className={style.post_date}>{String(detail.date).slice(0, 10)}</h3>
-        <h3 className={style.post_author}>sebellko</h3>
+        <h2 className={style.post_date}>{String(detail.date).slice(0, 10)}</h2>
+        <h2 className={style.post_author}>sebellko</h2>
       </div>
       <div className="markdownDiv" data-color-mode="light">
         <MDEditor.Markdown source={detail.content}></MDEditor.Markdown>
