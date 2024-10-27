@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props) {
 
   const { title, desc, previewUrl } = postData || {};
 
-  const TITLE = title ? title : META.title;
+  const TITLE = title ? `injisangjung | ${title}` : META.title;
   const DESC = desc || META.description;
   const PAGE_URL = `${META.url}/posts/${postId}`;
   const OG_IMAGE = previewUrl || META.ogImage;
