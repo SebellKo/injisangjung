@@ -14,8 +14,6 @@ export const META = {
     'frontend',
   ],
   url: 'https://sebell.site',
-  //   googleVerification: 'xxx',
-  //   naverVerification: 'xxx',
   ogImage: '/assets/images/preview_default.jpeg',
   icons: {
     icon: '/assets/favicon.svg',
