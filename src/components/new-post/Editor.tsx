@@ -7,6 +7,7 @@ import MDEditor, {
   TextAreaTextApi,
   TextState,
 } from '@uiw/react-md-editor';
+import convertImgToWebp from '@/utils/convertImgToWebp';
 
 interface Props {
   postValue?: string;
@@ -26,8 +27,12 @@ function Editor({ postValue, setPostValue }: Props) {
     try {
       if (!event.target.files) return;
 
+      const convertedImage = (await convertImgToWebp(
+        event.target.files[0]
+      )) as File;
+
       const formData = new FormData();
-      formData.append('image', event.target.files[0]);
+      formData.append('image', convertedImage);
 
       const response = await fetch('api/posts/make-post/upload-image', {
         method: 'POST',

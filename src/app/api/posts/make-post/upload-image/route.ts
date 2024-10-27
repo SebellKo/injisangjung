@@ -43,6 +43,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ ok: true, url: imageUrl }, { status: 200 });
   } catch (error) {
+    console.log(error);
     return NextResponse.json({ error: ERROR_MESSAGE.invalid }, { status: 403 });
   }
 }
