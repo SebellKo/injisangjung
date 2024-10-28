@@ -12,24 +12,23 @@ interface Props {
 }
 
 function Preview({ currentPost }: Props) {
-  const imageUrl =
-    currentPost === null ? PREVIEW_DEFAULT_IMAGE : currentPost.previewUrl;
-  const previewDesc =
-    currentPost === null ? PREVIEW_DEFAULT_DESC : currentPost.desc;
+  const imageUrl = currentPost?.previewUrl || PREVIEW_DEFAULT_IMAGE;
+  const previewDesc = currentPost?.desc || PREVIEW_DEFAULT_DESC;
+  const postLink = currentPost
+    ? `/posts/${currentPost.postId}?category=${currentPost.category}`
+    : null;
 
-  return (
-    <Link
-      href={`/posts/${currentPost?.postId}?category=${currentPost?.category}`}
-    >
-      <div className={style.preview}>
-        <img
-          src={imageUrl}
-          className={style.preview_image}
-          alt="preview image"
-        ></img>
-        <p className={style.preview_desc}>{previewDesc}</p>
-      </div>
-    </Link>
+  const PreviewContent = (
+    <div className={style.preview}>
+      <img src={imageUrl} className={style.preview_image} alt="preview image" />
+      <p className={style.preview_desc}>{previewDesc}</p>
+    </div>
+  );
+
+  return postLink ? (
+    <Link href={postLink}>{PreviewContent}</Link>
+  ) : (
+    PreviewContent
   );
 }
 
