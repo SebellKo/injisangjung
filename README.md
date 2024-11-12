@@ -1,6 +1,4 @@
 
-![injisangjung-home.svg](https://github.com/user-attachments/assets/83190bc4-f30b-4047-97d8-4ccb9e1f7877)
-
 ![injisangjung.svg](https://github.com/user-attachments/assets/288a203f-98c0-4a94-ba31-feb46f349000)
 
 ## About
