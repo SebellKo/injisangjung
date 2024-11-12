@@ -1,13 +1,11 @@
-![injisangjung.svg](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6f81d3d-54d0-4886-88a9-db5b2861e13a/46e36666-6ac0-4ef0-a591-20ffda681568/injisangjung.svg)
 
-![injisangjung-home.svg](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6f81d3d-54d0-4886-88a9-db5b2861e13a/867192b4-a977-45a0-8326-118bd21dc0cb/injisangjung-home.svg)
+![injisangjung-home.svg](https://github.com/user-attachments/assets/83190bc4-f30b-4047-97d8-4ccb9e1f7877)
+
+![injisangjung.svg](https://github.com/user-attachments/assets/288a203f-98c0-4a94-ba31-feb46f349000)
 
 ## About
 
----
-
 > [고세종이 궁금하다면 바로가기](https://www.sebell.site/)
-> 
 
 고세종의 일상과 글, 개발일지 및 프로젝트에 대한 포스팅을 작성하는 개인 블로그
 
@@ -17,16 +15,12 @@ velog, tistory등 이미 많은 블로그가 아닌 시작부터 끝까지 디�
 
 ## Feature
 
----
-
 - admin 인증 기능
 - 마크다운 에디터를 활용한 게시글 생성 기능
 - 게시글 카테고리 선택 기능
 - 웹, 모바일 반응형 뷰
 
 ## Skills
-
----
 
 - Next.js 14
 - mongoDB
@@ -36,12 +30,10 @@ velog, tistory등 이미 많은 블로그가 아닌 시작부터 끝까지 디�
 
 ## Result
 
----
+<img width="1680" alt="스크린샷 2024-11-12 오후 2 36 43" src="https://github.com/user-attachments/assets/2b62e407-159c-4ecc-85bb-d5ac13d6701a">
 
-![스크린샷 2024-11-12 오후 2.36.43.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6f81d3d-54d0-4886-88a9-db5b2861e13a/8eeb74e7-502b-49de-ad31-1ca872ec9434/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-12_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_2.36.43.png)
+![2024-11-122 38 07-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/c37ce9f9-909c-440a-9b48-8605ffa35bd2)
 
-![2024-11-122.38.07-ezgif.com-video-to-gif-converter.gif](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6f81d3d-54d0-4886-88a9-db5b2861e13a/01cb0d58-0ab3-468f-ab7c-63183661bb41/2024-11-122.38.07-ezgif.com-video-to-gif-converter.gif)
+<img width="293" alt="스크린샷 2024-11-12 오후 2 41 37" src="https://github.com/user-attachments/assets/c36ed451-11e0-404d-8186-dc507f458d93">
 
-![스크린샷 2024-11-12 오후 2.41.37.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6f81d3d-54d0-4886-88a9-db5b2861e13a/4bac88fc-90ef-4266-9b82-2b535dc60af4/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-11-12_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_2.41.37.png)
-
-![2024-11-122.41.55-ezgif.com-optimize.gif](https://prod-files-secure.s3.us-west-2.amazonaws.com/f6f81d3d-54d0-4886-88a9-db5b2861e13a/f6048556-b8b5-492b-a0c6-ae71510d9574/2024-11-122.41.55-ezgif.com-optimize.gif)
+![2024-11-122 41 55-ezgif com-optimize](https://github.com/user-attachments/assets/a0829a24-0b68-4b49-82cc-8dd111e35ef2)
