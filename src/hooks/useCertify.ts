@@ -18,13 +18,21 @@ const useCertify = () => {
         password: password,
       }),
     });
-    const { accessToken } = await response.json();
 
-    if (typeof window !== 'undefined') {
-      sessionStorage.setItem('accessToken', accessToken);
-      sessionStorage.setItem('isAdmin', 'true');
-      setIsAdmin(true);
+    const status = response.status;
+
+    if (status === 200) {
+      const { accessToken } = await response.json();
+      if (typeof window !== 'undefined') {
+        sessionStorage.setItem('accessToken', accessToken);
+        sessionStorage.setItem('isAdmin', 'true');
+        setIsAdmin(true);
+      }
+
+      return { isValid: true };
     }
+
+    return { isValid: false };
   };
 
   return { handleCertify, isAdmin };
