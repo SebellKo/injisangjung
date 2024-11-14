@@ -13,8 +13,8 @@ function Certify() {
 
   const handleClickCertify = async (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    await handleCertify(id, password);
-    router.push('/');
+    const { isValid } = await handleCertify(id, password);
+    if (isValid) router.push('/');
   };
 
   return (
