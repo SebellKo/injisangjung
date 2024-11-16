@@ -1,3 +1,4 @@
 export const PREVIEW_DEFAULT_IMAGE = '/assets/images/preview_default.jpeg';
-export const PREVIEW_DEFAULT_DESC =
-  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.";
+export const PREVIEW_DEFAULT_DESC = `안녕하세요 고세종의 인지상정입니다.
+고세종이 궁금하다면 대답해 드리는게 인지상정.
+고세종의 인지상정은 고세종의 쉬지않고 돌아가는 상상속 잡생각을 포함하고 있습니다.`;

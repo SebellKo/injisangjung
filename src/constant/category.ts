@@ -4,23 +4,20 @@ const CATEGORY = [
   },
   {
     title: 'Tech',
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+    description: '열받는 이슈가 있을경우 업로드 됩니다.',
   },
   {
     title: 'Writing',
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+    description: `경험과 상상을 기반으로한 허구와 사실 반반
+센치한 날에 업로드 됩니다.`,
   },
   {
     title: 'Daily',
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+    description: '2주 ~ 한달에 한번 업로드 됩니다.',
   },
   {
     title: 'Project',
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+    description: '완료한, 진행할 프로젝트가 있을때 업로드 됩니다.',
   },
 ];
 
