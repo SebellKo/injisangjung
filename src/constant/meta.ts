@@ -1,7 +1,11 @@
+const title = 'injisangjung';
+const desc = '안녕하세요. 고세종의 인지상정 입니다.';
+const url = 'https://sebell.site';
+
 export const META = {
-  title: 'injisangjung',
-  siteName: 'injisangjung',
-  description: '안녕하세요. 고세종의 인지상정 입니다.',
+  title: title,
+  siteName: title,
+  description: desc,
   keyword: [
     '인지상정',
     'injisangjung',
@@ -13,8 +17,18 @@ export const META = {
     '프론트엔드',
     'frontend',
   ],
-  url: 'https://sebell.site',
-  ogImage: '/assets/images/preview_default.jpeg',
+  url: url,
+  openGraph: {
+    title: title,
+    description: desc,
+    siteName: title,
+    locale: 'ko_KR',
+    type: 'website',
+    url: url,
+    images: {
+      url: '/assets/images/preview_default.jpeg',
+    },
+  },
   icons: {
     icon: '/assets/favicon.svg',
   },
