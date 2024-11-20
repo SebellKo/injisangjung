@@ -15,4 +15,5 @@ export interface PostPreviewRes {
   desc: string;
   previewUrl: string;
   category: string;
+  date: Date;
 }
