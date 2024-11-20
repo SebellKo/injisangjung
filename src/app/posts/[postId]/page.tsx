@@ -2,6 +2,7 @@ import Content from '@/components/posts/content/Content';
 import PostList from '@/components/posts/post-list/PostList';
 import { META } from '@/constant/meta';
 import style from '@/styles/posts/post-page.module.css';
+import getPostMetaData from '@/utils/getPostMetaData';
 
 interface Props {
   params: {
@@ -12,10 +13,7 @@ interface Props {
 export async function generateMetadata({ params }: Props) {
   const { postId } = params;
 
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/posts/${postId}`
-  );
-  const { result: postData } = await response.json();
+  const postData = await getPostMetaData(postId);
 
   const { title, desc, previewUrl } = postData || {};
 
