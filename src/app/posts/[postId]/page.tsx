@@ -17,19 +17,19 @@ export async function generateMetadata({ params }: Props) {
 
   const { title, desc, previewUrl } = postData || {};
 
-  const TITLE = title ? `injisangjung | ${title}` : META.title;
-  const DESC = desc || META.description;
+  const TITLE = `injisangjung | ${title}`;
+  const DESC = desc;
   const PAGE_URL = `${META.url}/posts/${postId}`;
-  const OG_IMAGE = previewUrl || META.ogImage;
+  const OG_IMAGE = previewUrl;
 
   const metadata = {
+    ...META,
     metadataBase: new URL(META.url),
     alternates: {
       canonical: PAGE_URL,
     },
     title: TITLE,
     description: DESC,
-    keywords: [...META.keyword],
     openGraph: {
       title: TITLE,
       description: DESC,
@@ -41,7 +41,6 @@ export async function generateMetadata({ params }: Props) {
         url: OG_IMAGE,
       },
     },
-    verification: { ...META.verification },
   };
 
   return metadata;
