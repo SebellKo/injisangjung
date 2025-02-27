@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import style from '@/styles/new-post/banner/post-upload.module.css';
-
-const categories = ['Tech', 'Writing', 'Daily', 'Project'];
+import CATEGORY from '@/constant/category';
 
 interface Props {
   postValue?: string;
@@ -72,15 +71,15 @@ function PostUpload({ postValue, postInfo }: Props) {
         </ul>
         {isMenuOpen && (
           <ul className={style.drop_down_menu}>
-            {categories.map((categoryItem) => (
+            {CATEGORY.map((categoryItem) => (
               <li
                 className={style.drop_down_menu_item}
                 onClick={() => {
-                  setCategory(categoryItem);
+                  setCategory(categoryItem.title);
                   setIsMenuOpen(false);
                 }}
               >
-                {categoryItem}
+                {categoryItem.title}
               </li>
             ))}
           </ul>

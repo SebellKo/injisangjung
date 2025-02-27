@@ -3,10 +3,6 @@ const CATEGORY = [
     title: 'All',
   },
   {
-    title: 'Tech',
-    description: '열받는 이슈가 있을경우 업로드 됩니다.',
-  },
-  {
     title: 'Writing',
     description: `경험과 상상을 기반으로한 허구와 사실 반반
 센치한 날에 업로드 됩니다.`,
