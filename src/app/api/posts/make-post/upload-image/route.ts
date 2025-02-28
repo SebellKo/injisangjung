@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
 
     const formData = await req.formData();
     const files = formData.getAll('image') as File[];
-    const body = (await files[0].arrayBuffer()) as Buffer;
+    const body = Buffer.from(await files[0].arrayBuffer());
 
     await s3.send(
       new PutObjectCommand({

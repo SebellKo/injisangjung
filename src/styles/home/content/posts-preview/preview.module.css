@@ -28,4 +28,12 @@
   .preview {
     gap: 10px;
   }
+
+  .preview_image {
+    width: 100%;
+  }
+
+  .preview_desc {
+    width: 100%;
+  }
 }

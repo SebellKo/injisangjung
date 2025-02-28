@@ -8,5 +8,7 @@
 @media screen and (max-width: 480px) {
   .main {
     height: 100%;
+    flex-direction: column;
+    align-items: center;
   }
 }
