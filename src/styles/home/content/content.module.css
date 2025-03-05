@@ -1,13 +1,12 @@
 .main {
-  height: calc(72% - 50px);
-
   display: flex;
+  flex: 7.5;
   gap: 80px;
 }
 
 @media screen and (max-width: 480px) {
   .main {
-    height: 100%;
+    flex: 9;
     flex-direction: column;
     align-items: center;
   }
