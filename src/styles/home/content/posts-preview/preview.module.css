@@ -1,15 +1,14 @@
 .preview {
   display: flex;
   flex-direction: column;
-  flex: 2;
-  max-width: 350px;
+  gap: 40px;
+  width: 350px;
 }
 
 .preview_image {
   object-fit: contain;
   background: #fff;
   width: 100%;
-  height: 350px;
 }
 
 .preview_desc {
@@ -26,12 +25,7 @@
 
 @media screen and (max-width: 480px) {
   .preview {
-    gap: 10px;
-  }
-
-  .preview_image {
-  }
-
-  .preview_desc {
+    width: 100%;
+    gap: 20px;
   }
 }

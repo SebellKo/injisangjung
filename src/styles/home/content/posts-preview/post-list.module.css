@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  width: 100%;
   gap: 10px;
 }
 
@@ -27,9 +28,4 @@
 
 .active {
   font-weight: 600;
-}
-
-@media screen and (max-width: 480px) {
-  .post_list {
-  }
 }

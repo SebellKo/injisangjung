@@ -1,12 +1,13 @@
 .posts {
   display: flex;
-  flex: 6.5;
+  flex: 8.5;
 }
 
 @media screen and (max-width: 480px) {
   .posts {
     flex-direction: column;
-    gap: 25px;
+    align-items: center;
+    gap: 30px;
   }
 
   .posts > *:first-child {
