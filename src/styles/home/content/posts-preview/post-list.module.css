@@ -1,9 +1,7 @@
 .post_list {
-  height: 97%;
-  overflow: scroll;
-
   display: flex;
   flex-direction: column;
+  flex: 1;
   gap: 10px;
 }
 
@@ -33,6 +31,5 @@
 
 @media screen and (max-width: 480px) {
   .post_list {
-    height: 40vh;
   }
 }

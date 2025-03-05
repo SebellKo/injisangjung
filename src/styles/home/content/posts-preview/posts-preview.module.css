@@ -1,9 +1,6 @@
 .posts {
-  height: 100%;
-
   display: flex;
-  flex: 1;
-  justify-content: space-between;
+  flex: 6.5;
 }
 
 @media screen and (max-width: 480px) {
