@@ -7,7 +7,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }).then((response) => response.json());
 
   const urls: MetadataRoute.Sitemap = posts.map((post: PostPreviewRes) => ({
-    url: `https://sebell.site/posts/${post.postId}?category=${post.category}`,
+    url: `https://sebell.site/posts/${post.postId}`,
     lastModified: post.date,
     changeFrequency: 'weekly',
     priority: 1,
